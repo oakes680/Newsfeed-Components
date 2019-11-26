@@ -85,6 +85,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'I am the GOAT',
+    date: 'Oct 20, 2020',
+    firstParagraph: `The goat is me aldkjaslkdjasl;kdjas;lkdjas;lkdjas;lkdjsa;lkdjasl;kdjas;lkdjasl;kdjasl;dkjsal;kdjasl;kdjsa;kldjsal;kdnas;kldnas;klndas;kldnaslk;ndaslkdn.,asdklaslkdjaslkdjaslkdskadlksa? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
 
@@ -99,6 +113,8 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
+  function componentCreator(){}
+
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -112,3 +128,68 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+ function componentCreator(title, date, first, second, third){ 
+  
+   let div1 = document.createElement('div');
+   div1.classList.add('article')
+    let h2 = document.createElement('h2')
+   div1.appendChild(h2)
+   h2.textContent = title
+   let p1 = document.createElement('p')
+   p1.classList.add('date')
+   p1.textContent = date
+   div1.appendChild(p1)
+   let p2 = document.createElement('p')
+   p2.textContent = first
+   let p3 = document.createElement('p')
+   p3.textContent = second
+   let p4 = document.createElement('p')
+   p4.textContent = third
+   div1.appendChild(p2)
+   div1.appendChild(p3)
+   div1.appendChild(p4)
+  
+   let span = document.createElement('button')
+    span.classList.add('expandButton')
+    //span.textContent=''
+    div1.appendChild(span)
+    span.addEventListener('click', function() {
+      div1.classList.toggle('article-open')
+    })
+
+   return div1
+ }
+
+
+
+
+// const article1 = componentCreator(data[1].title, data[1].date, data[1].firstParagraph, data[1].secondParagraph, data[1].thirdParagraph)
+
+let articles = document.querySelector('.articles')
+
+// for (let i = 0; i < data.length; i++) {
+//   let articleZ = componentCreator(data[i].title, data[i].date, data[i].firstParagraph, data[i].secondParagraph, data[i].thirdParagraph)
+// articles.appendChild(articleZ)
+// }
+
+
+// data.forEach( (item) => {
+// let articleZ = componentCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph)
+// articles.appendChild(articleZ)
+// })
+
+let aaa = data.map( (item) => {
+  let articleZ = componentCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  return articleZ
+})
+
+aaa.forEach(articleZ => {
+  articles.appendChild(articleZ)
+})
+
+
+
+  
+
+
