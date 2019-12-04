@@ -149,14 +149,33 @@ const data = [
    div1.appendChild(p2)
    div1.appendChild(p3)
    div1.appendChild(p4)
+
+    //p4.style.marginBottom= '20px'
   
    let span = document.createElement('button')
     span.classList.add('expandButton')
+    //span.textContent = ''
     //span.textContent=''
     div1.appendChild(span)
     span.addEventListener('click', function() {
-      div1.classList.toggle('article-open')
+    div1.classList.toggle('article-open')
     })
+
+    let buttonClose = document.createElement('button')
+    //let buttonOpen = document.createElement('button')
+
+    buttonClose.textContent= `${title}   Show/Hide`
+    articles.append(buttonClose)
+
+  
+    
+    
+
+    buttonClose.addEventListener('click', () => {
+      div1.classList.toggle('hid')
+    })
+ 
+    
 
    return div1
  }
@@ -180,12 +199,12 @@ let articles = document.querySelector('.articles')
 // })
 
 let aaa = data.map( (item) => {
-  let articleZ = componentCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
-  return articleZ
+  return componentCreator(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  
 })
 
-aaa.forEach(articleZ => {
-  articles.appendChild(articleZ)
+aaa.forEach(item => {
+  articles.appendChild(item)
 })
 
 

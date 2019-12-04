@@ -9,13 +9,7 @@ let menuItems = [
   'Log Out'
 ];
 
-//menuItems.forEach(e => console.log(e));
 
-// let aaa = menuItems.map( (item) => {
-//     let li1 = document.createElement('li')
-//     return li1
-//   })
-//   console.log(aaa)
 
 /* 
 
@@ -47,11 +41,19 @@ function componentCreator(arr) {
   let ul = document.createElement('ul');
   div2.appendChild(ul);
 
-  for (let i = 0; i < arr.length; i++) {
+  // for (let i = 0; i < arr.length; i++) {
+  //   let li = document.createElement('li');
+  //   console.log(li.textContent = arr[i]);
+  //   ul.appendChild(li);
+  // }
+
+  arr.forEach((item) => {
     let li = document.createElement('li');
-    li.textContent = arr[i];
+    li.textContent = item;
     ul.appendChild(li);
-  }
+  })
+
+
 
   let mb = document.querySelector('.menu-button');
   

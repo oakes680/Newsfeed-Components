@@ -75,7 +75,16 @@
   z-index: 50;
 }
 .article-open {
-  height: 400px;
+  height: auto;
+}
+.none {
+  display: none;
+}
+.vis {
+  visibility: visible;
+}
+.hid {
+  visibility: hidden;
 }
 .menu-button {
   position: absolute;
