@@ -30,7 +30,7 @@ let menuItems = [
 
   Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
 
-  Step 5: return the menu component.
+  Step 5: return the menu componen
 
   Step 6: add the menu component to the DOM.
   
