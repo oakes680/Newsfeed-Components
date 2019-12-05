@@ -172,7 +172,7 @@ const data = [
     
 
     buttonClose.addEventListener('click', () => {
-      div1.classList.toggle('hid')
+      div1.classList.toggle('none')
     })
  
     

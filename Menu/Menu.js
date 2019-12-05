@@ -37,34 +37,36 @@ let menuItems = [
 */
 function componentCreator(arr) {
   let div2 = document.createElement('div');
-  div2.classList.add('menu');
-  let ul = document.createElement('ul');
+  div2.classList.add('menu', 'sub', 'closed' );
+  let ul = document.createElement('ul', );
   div2.appendChild(ul);
-
+  ul.classList.add()
   // for (let i = 0; i < arr.length; i++) {
   //   let li = document.createElement('li');
   //   console.log(li.textContent = arr[i]);
   //   ul.appendChild(li);
   // }
-
   arr.forEach((item) => {
     let li = document.createElement('li');
     li.textContent = item;
     ul.appendChild(li);
   })
 
-
-
   let mb = document.querySelector('.menu-button');
-  
-  mb.addEventListener('click', function() {
-    div2.classList.toggle('menu--open');
+  // mb.addEventListener('click', function () {
+  //   div2.classList.toggle('menu--open');
+  // });
+  mb.addEventListener('click', function () {
+      var closed = div2.className.indexOf('closed') !== -1;
+      if (closed) {
+         div2.className = div2.className.replace('closed', 'open');
+      } else {
+         div2.className = div2.className.replace('open', 'closed');
+      }
   });
-
   return div2;
 }
 
 let menu3 = document.querySelector('.header')
-
 
 menu3.appendChild(componentCreator(menuItems))

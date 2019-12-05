@@ -92,7 +92,6 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
   left: 0;
@@ -114,6 +113,25 @@
 }
 .menu--open {
   display: block;
+}
+.sub {
+  position: absolute;
+}
+.open {
+  left: 0;
+  -webkit-transition: all 500ms cubic-bezier(0.68, 0, 0.265, 1);
+  -webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.closed {
+  left: -100%;
+  -webkit-transition: all 500ms cubic-bezier(0.68, 0, 0.265, 1);
+  -webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 html,
 body {
